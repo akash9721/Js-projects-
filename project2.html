@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+          *{
+              margin: 0;
+              padding: 0;
+          }
+          html,body
+          {
+            height: 100%;
+            display: grid;
+            place-items: center;
+          }
+          #one
+          {
+              width: 1000px;
+              height: 500px;
+              border: 2px solid gray;
+              background-image: url("E:/picture/simple.jpg");
+          }
+          #one #two
+          {
+              width: 500px;
+              height: 480px;
+              border: 1px solid black;
+              background: #eaedef;
+             /* border-radius: 50%;
+              background-image:repeating-radial-gradient(circle ,red ,pink 10%,yellow 15%);*/
+              margin: 0 auto;
+              position: relative;
+              top: 10px;
+              animation: animate 1.2s linear infinite;
+
+          }
+          #frm
+          {
+              position: relative;
+              left: 50px;
+              top: 30px;
+              font-size: 20px;
+              width: 400px;
+          }
+          #input
+          {
+              height: 50px;
+          }
+          #x
+          {
+              padding: 4px;
+          }
+          #xx
+          {
+              padding: 3px;
+              width: 80px;
+              margin: 2px;
+              color: black;
+              background: rgb(0, 255, 13);
+          }
+          @keyframes animate {
+              100%{
+                  filter: hue-rotate(90deg);
+              }
+              
+          }
+        </style>
+    </head>
+    <body>
+        <div id="one">
+            <div id="two">
+                <form id="frm">
+                    Enter First no: <input type="text" id="x" name="first" ><br><br>
+                    Enter scnd no: <input type="text" id="x" name="second" ><br><br>
+                    Result of nois: <input type="text" id="x" name="res" ><br><br>
+                    <input type="button" id="xx" value="Add+" onclick="add()">
+                    <input type="button" id="xx" value="sub-" onclick="sub()">
+                    <input type="button" id="xx" value="mul*" onclick="mul()">
+                    <input type="button" id="xx" value="div/" onclick="div()"><br>
+                    <input type="button" id="xx" value="mod%" onclick="mod()">
+                    <input type="button" id="xx" value="sqrt^2" onclick="sqrt()">
+                    <input type="button" id="xx" value="pow^" onclick="pow()">
+                    <input type="reset" id="xx" value="reset">
+                </form>
+            </div>
+        </div> 
+        <script>
+            function add()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=first+second;
+                frm.res.value=res;
+            }
+            function sub()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=first-second;
+                frm.res.value=res;
+            }
+            function mul()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=first*second;
+                frm.res.value=res;
+            }
+            function div()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=first/second;
+                frm.res.value=res;
+            }
+            function mod()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=first%second;
+                frm.res.value=res;
+            }
+            function pow()
+            {
+                first=parseFloat(frm.first.value);
+                second=parseFloat(frm.second.value);
+                res=Math.pow(first,second);
+                frm.res.value=res;
+            }
+            function sqrt()
+            {
+                first=parseFloat(frm.first.value);
+                res=Math.sqrt(first);
+                frm.res.value=res;
+            }
+
+        </script>
+    </body>
+</html>

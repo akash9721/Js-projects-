@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>project 4</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            html,body{
+                height: 100%;
+                display: grid;
+                place-items: center;
+            }
+            #one
+            {
+                width: 600px;
+                height: 500px;
+                background: #fff123;
+                border: 2px solid gray;
+                display: grid;
+                place-items: center;
+            }
+           
+            button
+            {
+                
+                position: absolute;
+                top: 40%;
+                left: 46%;
+                background: black;
+                color: #15f4ee;
+                font-size: 20px;
+                font-weight: 400;
+                border: 5px solid #15f4ee;
+                padding: 8px;
+                border-radius: 30px;
+                cursor: pointer;
+                /*transform: translate(-50%,-50%);*/
+            }
+            #btn:hover
+            {
+                box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+            }
+        </style>
+        <body>
+                <div id="one">
+                    <h1 id="h1">#FFF123</h1>
+                    <button id="btn" onclick="fun()"> change color</button>
+                </div>
+        </body>
+        <script>
+            function fun()
+            {
+                var col,symbol;
+                symbol="0123456789ABCDEF";
+                col="#";
+                for(var i=0;i<6;i++)
+                {
+                    col=col+symbol[Math.floor(Math.random()*16)];
+                }
+                document.body.style.background=col;
+                //one.style.background=col;
+                document.getElementById('h1').innerHTML=col;
+            }
+            var p=setInterval(fun,1000);
+        </script>
+    </head>
+</html>
